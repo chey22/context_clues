@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //5 friends    
-    var friends = ['Jamie', 'Emily', 'Ross', 'Mackenzie', 'Anna'];
+    var friends = ['Tayler', 'Jamie', 'Ross', 'Mackenzie', 'Emily'];
     //10 locations
     var locations = ['kitchen', 'living room', 'dining room', 'bedroom', 'bathroom', 'pantry', 'basement', 'den', 'sunroom', 'foyer']
     //20 weapons
@@ -13,15 +13,9 @@ $(document).ready(function () {
     };
 
     function accusation(i) {
-        var friend = friends[(i - 1) % 5];
-        var location = locations[(i - 1) % 10];
-        var weapon = weapons[(i - 1) % 20];
 
-        function Alert() {
-            alert(`accusation ${i}: I accuse ${friend}, with the ${weapon}, in the ${location}!`);
+        return function () {
+            alert(`accusation ${i}: I accuse ${friends[(i - 1) % friends.length]}, with the ${weapons[(i - 1) % weapons.length]}, in the ${locations[(i - 1) % locations.length]}!`);
         };
-
-        return Alert;
     };
-
 });
